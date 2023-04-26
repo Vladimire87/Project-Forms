@@ -1,0 +1,31 @@
+<div class="container">
+  <h2>Create new User</h2>
+
+  <form action="/users" method="post" accept-charset="UTF-8">
+    <div class="label-inputs">
+      <div><label for="username">Username:</label></div>
+      <div><input type="text" id="username" name="user[username]" /></div>
+    </div>
+
+    <div class="label-inputs">
+      <div><label for="email">Email:</label></div>
+      <div><input type="text" id="email" name="user[email]" /></div>
+    </div>
+
+    <div class="label-inputs">
+      <div><label for="password">Password:</label></div>
+      <div><input type="password" id="password" name="user[password]" /></div>
+    </div>
+
+    <input type="submit" value="Submit" />
+  </form>
+</div>
+
+<div style="display: flex; justify-content: center; margin: 50px;">
+  <ul>
+    <% User.all.each do |user| %>
+      <li>ID: <%= user.id %> Username: <%= user.username %></li>
+    <% end %>
+  </ul>
+</div>
+
