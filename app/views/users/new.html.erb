@@ -1,7 +1,7 @@
 <div class="container">
   <h2>Create new User</h2>
 
-  <form action="/users" method="post" accept-charset="UTF-8">
+  <%# <form action="/users" method="post" accept-charset="UTF-8">
     <div class="label-inputs">
       <div><label for="username">Username:</label></div>
       <div><input type="text" id="username" name="user[username]" /></div>
@@ -18,13 +18,31 @@
     </div>
 
     <input type="submit" value="Submit" />
-  </form>
+  </form> %>
+  <%= form_tag users_path do %>
+    <div class="label-inputs">    
+      <div> <%= label_tag 'username', 'Username:' %> </div>
+      <div> <%= text_field_tag 'username', nil, placeholder: 'Enter username...' %> </div>
+    </div>
+    <div class="label-inputs">
+      <div> <%= label_tag 'email', 'Email:' %> </div>
+      <div> <%= email_field_tag 'email', nil, placeholder: 'Enter email...' %> </div>
+    </div>
+    <div class="label-inputs">
+      <div> <%= label_tag 'password', 'Password:' %> </div>
+      <div> <%= password_field_tag 'password', nil, placeholder: 'Enter password...' %> </div>
+    </div>
+    <%= submit_tag "Submit" %>
+  <% end %>
+  </div>
+
+
 </div>
 
 <div style="display: flex; justify-content: center; margin: 50px;">
   <ul>
     <% User.all.each do |user| %>
-      <li>ID: <%= user.id %> Username: <%= user.username %></li>
+      <li>ID: <%= user.id %> | Username: <%= user.username %></li>
     <% end %>
   </ul>
 </div>

@@ -10,7 +10,6 @@ form {
   display: flex;
   flex-direction: column;
   justify-content: center;
-
   gap: 5px;
 }
 
@@ -18,8 +17,10 @@ input {
   background-color: rgba(128, 128, 128, 0.1);
   border: none;
   border-radius: 15px;
-  padding: 5px;
-  align-items: center;
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
 }
 
 input[type="submit"] {
@@ -30,6 +31,7 @@ input[type="submit"] {
   border-radius: 15px;
   font-size: 1.1em;
   font-weight: bold;
+  cursor: pointer;
 }
 
 .label-inputs {
